@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EC.ai - Intelligent Insights</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <div class="animated-background">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="glass-header">
+      <div class="logo">
+        <span class="logo-text">EC.ai</span>
+        <div class="live-dot"></div>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html" class="nav-item active">Dashboard</a>
+      </nav>
+      <div class="user-profile">
+        <button id="user-menu-trigger" class="user-badge" type="button" aria-label="Open user menu" aria-expanded="false" hidden>U</button>
+        <div id="user-menu" class="user-menu" hidden>
+          <button id="logout-btn" class="user-menu-item" type="button">Log out</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Login Area -->
+    <div id="login-section" class="login-wrapper">
+      <div class="glass-card login-card">
+        <h2>Employee Login</h2>
+        <p>Please enter your credentials to access the dashboard.</p>
+        <div class="form-group">
+          <label for="login-username">Username</label>
+          <input type="text" id="login-username" class="search-input" placeholder="Username">
+        </div>
+        <div class="form-group">
+          <label for="login-password">Password</label>
+          <input type="password" id="login-password" class="search-input" placeholder="Password">
+        </div>
+        <p id="login-error" class="login-error" style="display:none;">Invalid username or password.</p>
+        <button id="login-btn" class="primary-btn">Login</button>
+      </div>
+    </div>
+
+    <!-- Main Dashboard Area -->
+    <main class="dashboard-grid" id="main-dashboard" style="display: none;">
+      <!-- Welcome Section -->
+      <section class="welcome-card glass-card">
+        <h1>Welcome Back</h1>
+        <p id="welcome-username">Employee</p>
+      </section>
+
+      <!-- Calendar Widget -->
+      <section class="widget-card calendar-widget glass-card" id="calendar-widget">
+        <div class="calendar-split">
+          <!-- Left side: Calendar Grid -->
+          <div class="calendar-left">
+            <div class="widget-header">
+              <h2>Calendar</h2>
+              <div class="calendar-nav">
+                <button id="prev-month" class="icon-btn">&larr;</button>
+                <button id="current-month-year" class="month-title month-toggle" type="button" aria-label="Open year view"></button>
+                <button id="next-month" class="icon-btn">&rarr;</button>
+              </div>
+            </div>
+            <div class="calendar-body">
+              <div class="weekdays" id="calendar-weekdays">
+                <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+              </div>
+              <div class="days-grid" id="days-grid">
+                <!-- Days rendered via JS -->
+              </div>
+            </div>
+          </div>
+          <!-- Right side: Daily Schedule & Teams Integration -->
+          <div class="calendar-right">
+            <div class="schedule-header">
+              <div>
+                <h3 id="schedule-date-title">Employee Tools</h3>
+                <p class="teams-identity">Open the work apps you use every day.</p>
+              </div>
+              <div id="teams-status" class="teams-status connected">
+                 <span class="status-dot"></span>
+                 <span class="status-text">Launch Ready</span>
+              </div>
+            </div>
+            <div class="schedule-content">
+              <div id="teams-connect-prompt" class="teams-connect-prompt">
+                <div class="teams-actions app-actions">
+                  <a
+                    id="btn-open-teams"
+                    class="app-icon-btn"
+                    href="msteams:/"
+                    aria-label="Open Teams"
+                    title="Open Teams"
+                  >
+                    <img src="assets/icons/teams.png" alt="Teams" class="app-icon-img">
+                  </a>
+                  <a
+                    id="btn-open-codex"
+                    class="app-icon-btn"
+                    href="codex://"
+                    aria-label="Open Codex"
+                    title="Open Codex"
+                  >
+                    <img src="assets/icons/codex.png" alt="Codex" class="app-icon-img">
+                  </a>
+                  <a
+                    id="btn-open-antigravity"
+                    class="app-icon-btn"
+                    href="antigravity://"
+                    aria-label="Open Antigravity"
+                    title="Open Antigravity"
+                  >
+                    <img src="assets/icons/antigravity.png" alt="Antigravity" class="app-icon-img">
+                  </a>
+                  <a
+                    id="btn-open-outlook"
+                    class="app-icon-btn"
+                    href="ms-outlook://"
+                    aria-label="Open Microsoft Outlook"
+                    title="Open Microsoft Outlook"
+                  >
+                    <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Microsoft%20Outlook%20Icon%20%282025%E2%80%93present%29.svg" alt="Outlook" class="app-icon-img">
+                  </a>
+                  <a
+                    id="btn-open-leave"
+                    class="app-icon-btn"
+                    href="leave.html"
+                    aria-label="Apply for Leave"
+                    title="Apply for Leave"
+                  >
+                    <svg class="app-icon-svg" viewBox="0 0 64 64" aria-hidden="true">
+                      <rect x="11" y="12" width="42" height="40" rx="12" fill="rgba(34, 197, 94, 0.12)" stroke="rgba(34, 197, 94, 0.3)" stroke-width="2"/>
+                      <path d="M22 10v8M42 10v8M17 24h30" fill="none" stroke="#15803d" stroke-width="3.5" stroke-linecap="round"/>
+                      <path d="M24 36l4.5 4.5L40 29" fill="none" stroke="#15803d" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <circle cx="24" cy="30" r="1.8" fill="#15803d"/>
+                      <circle cx="31.5" cy="30" r="1.8" fill="#15803d" opacity="0.45"/>
+                      <circle cx="39" cy="30" r="1.8" fill="#15803d" opacity="0.45"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Weather Widget -->
+      <section class="widget-card weather-widget glass-card" id="weather-widget">
+        <div class="widget-header">
+          <h2>Weather</h2>
+          <div class="weather-search">
+            <input type="text" id="weather-search-input" placeholder="Zipcode or City" class="search-input">
+            <button id="weather-search-btn" class="icon-btn search-btn">🔍</button>
+          </div>
+        </div>
+        <div class="weather-content">
+          <div class="weather-status-wrapper">
+             <div class="weather-icon-container">
+                <span id="weather-icon" class="weather-emoji">...</span>
+             </div>
+             <div class="temp-display">
+                <span id="temperature" class="temp-value">--</span>
+                <span class="temp-unit">&deg;C</span>
+             </div>
+          </div>
+          <div class="weather-details">
+            <div class="detail-item">
+              <span class="detail-label">Condition</span>
+              <span id="weather-desc" class="detail-value">Loading...</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">City</span>
+              <span id="weather-location" class="detail-value">Fetching...</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">Rain Prob.</span>
+              <span id="rain-prob" class="detail-value">--%</span>
+            </div>
+          </div>
+          <!-- 10 Day Forecast -->
+          <div class="forecast-container">
+            <h3 class="forecast-title">10-Day Forecast</h3>
+            <div class="table-responsive">
+              <table class="forecast-table">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Conditions</th>
+                    <th>High</th>
+                    <th>Low</th>
+                    <th>Rain %</th>
+                  </tr>
+                </thead>
+                <tbody id="forecast-table-body">
+                  <!-- JS rendered items here -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+  </div>
+  <script src="app.js?v=20260324"></script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EC.ai - Leave Application</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .leave-form-card {
+      max-width: 500px;
+      width: 100%;
+      margin: 2rem auto;
+    }
+    .leave-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .form-group select {
+      width: 100%;
+      background: rgba(0,0,0,0.2);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg);
+      color: var(--text-primary);
+      padding: 0.75rem;
+      font-family: inherit;
+      outline: none;
+      font-size: 1rem;
+      appearance: none;
+    }
+    .form-group select option {
+      background: var(--bg-dark);
+      color: var(--text-primary);
+    }
+    .form-group input[type="date"] {
+      width: 100%;
+      background: rgba(0,0,0,0.2);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg);
+      color: var(--text-primary);
+      padding: 0.75rem;
+      font-family: inherit;
+      outline: none;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+    .form-group input[type="date"]::-webkit-calendar-picker-indicator {
+      filter: invert(1);
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <div class="animated-background">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="glass-header">
+      <div class="logo">
+        <a href="index.html" style="text-decoration:none; display:flex; align-items:center; gap:0.5rem;">
+          <span class="logo-text">EC.ai</span>
+          <div class="live-dot"></div>
+        </a>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html" class="nav-item">Dashboard</a>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main style="padding: 2rem; display: flex; justify-content: center;">
+      <div class="glass-card leave-form-card">
+        <h2 style="font-size:1.8rem; color:var(--text-primary);">Leave Application</h2>
+        <p style="color: var(--text-secondary); margin-top: 0.5rem; font-size: 0.95rem;">Submit your time-off request below.</p>
+        
+        <form id="leave-form" class="leave-form">
+          <div class="form-group">
+            <label for="start-date">Start Date</label>
+            <input type="date" id="start-date" required>
+          </div>
+          <div class="form-group">
+            <label for="end-date">End Date</label>
+            <input type="date" id="end-date" required>
+          </div>
+          <div class="form-group">
+            <label for="leave-reason">Reason for Leave</label>
+            <select id="leave-reason" required>
+              <option value="" disabled selected>Select an option</option>
+              <option value="Sick">Sick</option>
+              <option value="Travel">Travel</option>
+              <option value="Work based travel">Work based travel</option>
+              <option value="Training">Training</option>
+            </select>
+          </div>
+          <button type="submit" class="primary-btn" style="margin-top: 0.5rem;">Submit Application</button>
+        </form>
+      </div>
+    </main>
+
+  </div>
+
+  <script>
+    document.getElementById('leave-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const startDate = document.getElementById('start-date').value;
+      const endDate = document.getElementById('end-date').value;
+      const reason = document.getElementById('leave-reason').value;
+      
+      const subject = encodeURIComponent(`Leave Application Request - ${reason}`);
+      const body = encodeURIComponent(`Hello Prathima,\n\nI would like to apply for leave.\n\nStart Date: ${startDate}\nEnd Date: ${endDate}\nReason: ${reason}\n\nThank you.`);
+      
+      // Attempt to open default mail client
+      window.location.href = `mailto:prathima@ecognity.ai?subject=${subject}&body=${body}`;
+    });
+  </script>
+</body>
+</html>
