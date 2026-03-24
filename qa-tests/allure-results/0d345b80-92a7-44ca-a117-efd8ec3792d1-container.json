@@ -1,0 +1,1 @@
+{"uuid":"0d345b80-92a7-44ca-a117-efd8ec3792d1","name":"GET /weather?days=abc → 400 Bad Request for invalid param","children":["0da99942-13ef-4a3f-bec8-200fc255717e"],"befores":[],"afters":[],"start":1774362707404,"stop":1774362707406}

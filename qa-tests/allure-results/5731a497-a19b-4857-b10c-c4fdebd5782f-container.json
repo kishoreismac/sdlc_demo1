@@ -1,0 +1,1 @@
+{"uuid":"5731a497-a19b-4857-b10c-c4fdebd5782f","name":"GET /weather → temp_max >= temp_min for all days","children":["58df3dfd-65c1-478f-a3b5-f520db04371f"],"befores":[],"afters":[],"start":1774362707394,"stop":1774362707396}

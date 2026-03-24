@@ -1,0 +1,1 @@
+{"uuid":"79924088-357f-47c4-ac7c-76b4a984667b","name":"GET /weather → each day has required fields: date, temp_max, temp_min, description","children":["e92c8866-f813-4496-8c39-0f46a00e04e2"],"befores":[],"afters":[],"start":1774362707390,"stop":1774362707393}

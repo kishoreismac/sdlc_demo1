@@ -1,0 +1,1 @@
+{"uuid":"05ca374a-b022-4055-8fee-c8ca95bb9d41","name":"GET /weather?days=0 → 400 or 422 for zero days","children":["b5320f63-983d-47f3-95ee-a3df817d2d7d"],"befores":[],"afters":[],"start":1774362707407,"stop":1774362707409}

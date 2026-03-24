@@ -1,0 +1,17 @@
+com\ecognity\ui\WeatherUITest.class
+com\ecognity\util\DateUtilsTest$DaysInMonthTests.class
+com\ecognity\service\WeatherServiceTest$FormatTempRangeTests.class
+com\ecognity\ui\BaseUITest.class
+com\ecognity\util\DateUtilsTest.class
+com\ecognity\ui\CalendarUITest.class
+com\ecognity\service\WeatherServiceTest$ParseTests.class
+com\ecognity\util\DateUtilsTest$ParseFormatTests.class
+com\ecognity\ui\HomePageUITest.class
+com\ecognity\util\DateUtilsTest$IsTodayTests.class
+com\ecognity\service\WeatherServiceTest.class
+com\ecognity\api\WeatherApiTest.class
+com\ecognity\api\CalendarAndDeploymentTest.class
+com\ecognity\util\DateUtilsTest$CalendarGridTests.class
+com\ecognity\service\WeatherServiceTest$TempConsistencyTests.class
+com\ecognity\util\DateUtilsTest$StartDayTests.class
+com\ecognity\service\WeatherServiceTest$ValidForecastTests.class

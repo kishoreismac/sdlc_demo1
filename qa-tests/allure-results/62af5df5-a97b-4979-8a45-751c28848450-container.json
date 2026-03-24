@@ -1,0 +1,1 @@
+{"uuid":"62af5df5-a97b-4979-8a45-751c28848450","name":"GET /weather → response body contains exactly 5 forecast days","children":["f2a050ec-b804-4fac-95ba-43989d622655"],"befores":[],"afters":[],"start":1774362707386,"stop":1774362707389}
