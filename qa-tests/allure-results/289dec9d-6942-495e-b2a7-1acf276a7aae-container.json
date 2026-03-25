@@ -1,0 +1,1 @@
+{"uuid":"289dec9d-6942-495e-b2a7-1acf276a7aae","name":"GET /weather?days=5 → explicit param returns 200 with 5 days","children":["83ccc2ec-0f08-4443-b992-a943d5f9ce56"],"befores":[],"afters":[],"start":1774408120487,"stop":1774408120492}
